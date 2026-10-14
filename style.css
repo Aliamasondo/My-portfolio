@@ -1,0 +1,70 @@
+:root {
+  --bg: #0b1115;
+  --panel: #111b20;
+  --panel-light: #17252b;
+  --text: #edf7f7;
+  --muted: #a2b5b9;
+  --teal: #46e0c0;
+  --teal-dark: #1d8d7b;
+  --border: #253a40;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+a { color: inherit; }
+.site-header {
+  position: sticky; top: 0; z-index: 10; display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem; padding: 1rem 7%;
+  background: rgba(11,17,21,.94); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px);
+}
+.logo { font-size: 1.45rem; font-weight: 900; text-decoration: none; letter-spacing: -.08em; }
+.logo span, h1 span, h2 span { color: var(--teal); }
+nav { display: flex; flex-wrap: wrap; gap: 1.15rem; }
+nav a { text-decoration: none; color: var(--muted); font-size: .9rem; }
+nav a:hover, .contact-links a:hover { color: var(--teal); }
+.section { padding: 5rem 7%; max-width: 1200px; margin: 0 auto; }
+.hero { min-height: 78vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.eyebrow { color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .16em; }
+h1 { max-width: 900px; margin: .5rem 0; font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 1.06; letter-spacing: -.055em; }
+h2 { margin: .4rem 0 1.5rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -.035em; }
+.hero h2 { color: #c4d4d7; font-size: clamp(1.15rem, 3vw, 1.7rem); letter-spacing: 0; }
+.intro, .section-intro { max-width: 720px; color: var(--muted); font-size: 1.05rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.4rem 0; }
+.button { display: inline-block; padding: .8rem 1.1rem; border: 1px solid var(--teal); border-radius: .6rem; text-decoration: none; font-weight: 750; }
+.button.primary { color: #06110f; background: var(--teal); }
+.button.secondary { color: var(--teal); }
+.hero-note { color: var(--muted); font-size: .9rem; margin-top: .5rem; }
+.status-dot { display: inline-block; width: .55rem; height: .55rem; margin-right: .4rem; background: var(--teal); border-radius: 50%; }
+.about-card, .panel, .project-card { background: var(--panel); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; }
+.about-card { max-width: 900px; color: #c5d5d8; }
+.grid { display: grid; gap: 1rem; }
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+h3 { margin-top: 0; font-size: 1.2rem; }
+h4 { margin: 0 0 .3rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.tags span { background: var(--panel-light); color: var(--teal); border: 1px solid #2c4d50; padding: .3rem .6rem; border-radius: 999px; font-size: .78rem; }
+.muted { color: var(--muted); }
+.small { font-size: .85rem; }
+.project-number { color: var(--teal); font-size: .75rem; font-weight: 800; letter-spacing: .12em; margin-bottom: .7rem; }
+.project-card p { color: var(--muted); }
+.notice { margin-top: 1.2rem; padding: 1rem; border-left: 3px solid var(--teal); background: #101c20; color: var(--muted); }
+.timeline-item { display: flex; gap: .8rem; margin: 1.2rem 0; }
+.timeline-mark { flex: 0 0 .7rem; width: .7rem; height: .7rem; margin-top: .45rem; border-radius: 50%; background: var(--teal); }
+.contact-section { border-top: 1px solid var(--border); }
+.contact-links { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.5rem 0; }
+.contact-links a { padding: .8rem 1rem; border: 1px solid var(--border); border-radius: .7rem; text-decoration: none; }
+.contact-links small { display: block; color: var(--muted); font-size: .7rem; }
+footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem 7%; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+@media (max-width: 760px) {
+  .site-header { align-items: flex-start; flex-direction: column; padding: .9rem 5%; }
+  nav { gap: .65rem 1rem; }
+  .section { padding: 3.5rem 5%; }
+  .grid.two, .grid.three { grid-template-columns: 1fr; }
+  .hero { min-height: auto; padding-top: 4rem; }
+  footer { flex-direction: column; padding: 1.3rem 5%; }
+}
